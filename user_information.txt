@@ -1,6 +1,6 @@
-UserName/email =
-Password =
-Item page =
+UserName/email = ttests
+Password = teste
+Item page = https://www.target.com/p/funko-pop--ad-icons--domino--39-s---the-noid--glow--pop----38--tee---m--target-exclusive-/-/A-77641531
 name =
 credit card =
 expiration date = 

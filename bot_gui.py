@@ -3,6 +3,7 @@ from tkinter import filedialog
 import hot_topic_bot
 import hottopic_gui
 import funko_gui
+import target_gui
 
 website = ''
 window = Tk()
@@ -36,6 +37,9 @@ def changeGui ():
     elif(website == 'Funko'):
         window.destroy()
         funko = funko_gui.funko_gui()
+    elif(website == 'Target'):
+        window.destroy()
+        target = target_gui.target_gui()
     else:
         print(website)
 
