@@ -1,0 +1,7 @@
+UserName/email = lafcrules@gmail.com
+Password = baseball8
+Item page = https://www.hottopic.com/product/funko-dragon-ball-super-pop-animation-ssg-goku-vinyl-figure-summer-convention-exclusive/13229073.html
+name = Sam Quiring
+credit card = 1234
+expiration date = 07/11
+security code = 123

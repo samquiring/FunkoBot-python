@@ -1,0 +1,7 @@
+UserName/email =
+Password =
+Item page = https://www.hottopic.com/product/funko-dragon-ball-super-pop-animation-ssg-goku-vinyl-figure-summer-convention-exclusive/13229073.html
+name =
+credit card =
+expiration date = 
+security code = 
