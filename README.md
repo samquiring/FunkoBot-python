@@ -3,7 +3,7 @@
  
  This was orignally made specifically for funkopop drops but it should work for any drop
  
- Currently functional bots: Funko.com, Hottopic.com
+ Currently functional bots: Funko.com, Hottopic.com, Target.com
  
  How to run: 
  1. Download all files
