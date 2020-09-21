@@ -1,7 +1,9 @@
 # Botting_sites_python
  A python bot made using selenium to purchase items right when they drop from selected sites
  
- Currently functional bots: Funko.com, Hottopic
+ This was orignally made specifically for funkopop drops but it should work for any drop
+ 
+ Currently functional bots: Funko.com, Hottopic.com
  
  How to run: 
  1. Download all files
