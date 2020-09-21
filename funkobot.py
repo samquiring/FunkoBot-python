@@ -3,19 +3,41 @@ from time import sleep
 import pdb
 
 class funkobot():
-    def __init__(self, webpage, email, first_name, last_name, address, city, zip, card_number, card_name, expr_date, secr_code):
+    def __init__(self, webpage, email, password):
         self.webpage = webpage
         self.email = email
-        self.first_name = first_name
-        self.last_name = last_name
-        self.address = address
-        self.city = city
-        self.zip = zip
-        self.card_number = card_number
-        self.name_card = card_name
-        self.expr_date = expr_date
-        self.secr_code = secr_code
+       # self.first_name = first_name
+        #self.last_name = last_name
+        #self.address = address
+        #self.city = city
+        #self.zip = zip
+        #self.card_number = card_number
+        #self.name_card = card_name
+        #self.expr_date = expr_date
+        #self.secr_code = secr_code
+        self.password = password
         self.driver = webdriver.Chrome('/Users/Sam/Downloads/chromedriver')
+
+    def login(self):
+        self.driver.get('https://www.funko.com/login')
+        self.driver.implicitly_wait(30)
+        email_in = self.driver.find_element_by_xpath('//*[@id="mainContent"]/div/div/div/div/div[2]/form/div/div[1]/label/input')
+        email_in.send_keys(self.email)
+        password_in = self.driver.find_element_by_xpath('/html/body/div[1]/div[1]/div[1]/div/div/div/div/div[2]/form/div/div[2]/label/input')
+        password_in.send_keys(self.password)
+        login_button = self.driver.find_element_by_xpath('//*[@id="mainContent"]/div/div/div/div/div[2]/form/div/div[3]/button')
+        login_button.click()
+        self.driver.implicitly_wait(30)
+
+    #need to find an unavailable product to implement this
+    def check_availablity(self):
+        check_available = self.driver.find_element_by_class_name('method-descr')
+        while(check_available.text == 'Not available for shipping'):
+            self.driver.refresh()
+            self.driver.implicitly_wait(30)
+            #sleep(random.uniform(.5, 5))
+            check_available = self.driver.find_element_by_class_name('method-descr')
+
 
     def get_funko(self):
         self.driver.get(self.webpage)
@@ -32,6 +54,7 @@ class funkobot():
         checkout_button = self.driver.find_element_by_xpath('//*[@id="mainContent"]/div[1]/div/div/div[2]/div[1]/div[2]/button')
         checkout_button.click()
     
+    ##not needed but kept incase user doesnt want to do checkout quick
     def checkout_funko(self):
         
         self.driver.implicitly_wait(30) 
@@ -84,9 +107,3 @@ class funkobot():
 
         pay_button = self.driver.find_element_by_xpath('//*[@id="continue_button"]')
         pay_button.click()
-
-
-    
-#user = funkobot()
-#user.get_funko()
-#user.checkout_quick()

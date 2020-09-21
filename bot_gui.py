@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import filedialog
 import hot_topic_bot
 import hottopic_gui
+import funko_gui
 
 website = ''
 window = Tk()
@@ -32,8 +33,9 @@ def changeGui ():
     if(website == 'Hottopic'):
         window.destroy()
         hot = hottopic_gui.hottopic_gui()
-    elif(website == 'Target'):
-        print('not yet made :(')
+    elif(website == 'Funko'):
+        window.destroy()
+        funko = funko_gui.funko_gui()
     else:
         print(website)
 

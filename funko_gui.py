@@ -1,17 +1,18 @@
 from tkinter import *
+import hot_topic_bot
 from tkinter import filedialog
-import funkobot
+from site_gui import site_gui
+from funkobot import funkobot
 
-class funko_gui():
+class funko_gui(site_gui):
+    
     def __init__(self):
-        self.window = Tk()
-        self.window.title("Hottopic bot")
-        self.title = Label(text = "Sam's Automatic Hottopic Item Buyer")
-        self.title.pack()
-        self.label_output = Label(text = "input file path to your user_information file")
-        input = Button(text = "browse files", command = self.browseFiles)
-        run_button = Button(text = "Run", command = self.start)
-        self.label_output.pack()
-        input.pack()
-        run_button.pack()
+        site_gui.__init__(self,"Funko bot","Sam's Automatic Funko Item Buyer")
+    
+    def start(self):
+        self.userInfo(self.input_file)
+        self.bot = funkobot(self.webpage, self.username, self.password)
+        self.bot.login()
+        self.bot.get_funko()
+        self.bot.checkout_quick()
         self.window.mainloop()
