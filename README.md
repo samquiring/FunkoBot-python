@@ -1,4 +1,4 @@
-# Botting_sites_python
+# FunkoBot
  A python bot made using selenium to purchase items right when they drop from selected sites
  
  This was orignally made specifically for funkopop drops but it should work for any drop
